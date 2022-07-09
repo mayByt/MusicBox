@@ -1,0 +1,39 @@
+
+.discover-root {
+	background-color: #EDEDED;
+	height: 100%;
+}
+.discover-item {
+	position: relative;
+	padding: 0 30rpx;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 108rpx;
+	margin-bottom: 16rpx;
+	background-color: white;
+	color: #111111;
+}
+.discover-item:active {
+	background-color: #D5D5D5;
+}
+.discover-item-icon {
+	width: 50rpx;
+	height: 50rpx;
+	margin-right: 30rpx;
+}
+.discover-item-title {
+	font-size: 32rpx;
+}
+.discover-item-go-to {
+	position: absolute;
+	top: 46rpx;
+	right: 30rpx;
+	width: 14rpx;
+	height: 14rpx;
+	border-top: 4rpx solid #ACACAC;
+	border-right: 4rpx solid #ACACAC;
+	-webkit-transform: rotate(45deg);
+	        transform: rotate(45deg);
+}
+

@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "moment-video": "/components/momentVideo/momentVideo",
+    "u-parse": "/components/gaoyia-parse/parse",
+    "moment-image": "/components/momentImage/momentImage"
+  }
+}

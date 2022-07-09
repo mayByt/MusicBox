@@ -1,0 +1,34 @@
+
+.comment-publish-area {
+	background-color: white;
+	width: 690rpx;
+	padding: 0 30rpx;
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 90rpx;
+	border-top: 1px solid #f3f3f3;
+	font-size: 28rpx;
+}
+.comment-publish-input-wrapper {
+	background-color: white;
+	height: 90rpx;
+	max-height: 180rpx;
+	width: 500rpx;
+	overflow-y: auto;
+}
+.comment-publish-input {
+	background-color: white;
+	height: 90rpx;
+	width: 500rpx;
+	color: #333;
+	font-size: 28rpx;
+	padding-top: 26rpx;
+}
+.comment-publish-button-gray {
+	color: #A1A1A1;
+}
+

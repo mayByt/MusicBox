@@ -1,0 +1,147 @@
+
+.friend-list-root {
+	height: 100%;
+}
+
+/* 用户信息 */
+.friend-user-wrapper {
+	background-color: white;
+	padding-left: 46rpx;
+	padding-right: 30rpx;
+	display: flex;
+	flex-direction: row;
+	padding-top: 20rpx;
+	position: relative;
+	margin-bottom: 42rpx;
+}
+.friend-user-avatar {
+	width: 100rpx;
+	height: 100rpx;
+	flex-shrink: 0;
+	border-radius: 10rpx;
+	margin-right: 24rpx;
+	border-radius: 50%;
+}
+.friend-user-info {
+	width: 580rpx;
+}
+.friend-user-user-name {
+	margin-top: 10rpx;
+	font-size: 32rpx;
+	color: #262626;
+	position: relative;
+}
+.friend-user-gender {
+	margin-left: 10rpx;
+	width: 28rpx;
+	height: 28rpx;
+}
+.friend-user-description {
+	margin-top: 6rpx;
+	font-size: 24rpx;
+	color: #7E7E7E;
+}
+.friend-user-has-followed-false {
+	position: absolute;
+	top: 48rpx;
+	right: 30rpx;
+
+	background-color: white;
+	color: #DA261B;
+	border: 2rpx solid #DA261B;
+
+	width: 126rpx;
+	height: 50rpx;
+	font-size: 26rpx;
+	letter-spacing: 2rpx;
+	line-height: 50rpx;
+	text-align: center;
+	border-radius: 32rpx;
+	padding: 0 6rpx;
+}
+.friend-user-has-followed-true {
+	position: absolute;
+	top: 48rpx;
+	right: 30rpx;
+
+	background-color: white;
+	color: #999999;
+	border: 2rpx solid #d8d8d8;
+
+	width: 126rpx;
+	height: 50rpx;
+	font-size: 26rpx;
+	letter-spacing: 2rpx;
+	line-height: 50rpx;
+	text-align: center;
+	border-radius: 32rpx;
+	padding: 0 6rpx;
+}
+.line {
+	height: 2rpx;
+	background-color: #f3f3f3;
+	margin-top: -4rpx;
+}
+
+/* tab导航 */
+.tab-nav-main-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	border-bottom: 2rpx solid #f3f3f3;
+	margin-top: 10rpx;
+}
+.tab-nav-main {
+	display: inline-flex;
+	flex-direction: row;
+	justify-content: center;
+	position: relative;
+}
+.tab-nav-list {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	font-size: 0;
+}
+.tab-nav-item {
+	box-sizing: border-box;
+	font-size: 30rpx;
+	padding-bottom: 20rpx;
+	padding-left: 6rpx;
+	padding-right: 6rpx;
+	margin: 0 120rpx;
+	position: relative;
+}
+.tab-nav-item-num {
+	font-size: 20rpx;
+	color: #9A9A9A;
+	position: absolute;
+	right: -20rpx;
+	top: 7rpx;
+}
+.tab-nav-item-active {
+	font-weight: bold;
+	color: #f6423d;
+	border-bottom: 4rpx solid #f6423d;
+}
+.tab-nav-underline {
+	position: absolute;
+	bottom: -2rpx;
+	left: 8rpx;
+	height: 4rpx;
+	border-radius: 2rpx;
+	background-color: #f6423d;
+}
+.tab-nav-underline-animation {
+	transition-duration: 200ms;
+	transition-property: left;
+}
+
+/* tab内容 */
+.tab-content {
+	height: 100%;
+}
+.tab-content-item {
+	overflow-y: auto;
+}
+

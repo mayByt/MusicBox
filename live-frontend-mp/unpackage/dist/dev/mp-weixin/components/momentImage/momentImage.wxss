@@ -1,0 +1,136 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 图片 */
+.moment-image-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.moment-image-list image {
+	border-radius: 6rpx;
+}
+.moment-image-divide-two-wrapper {
+	position: relative;
+	width: 49.5%;
+	height: 0;
+	padding-bottom: 49.5%;
+	margin-bottom: 6rpx;
+}
+.moment-image-divide-three-wrapper {
+	position: relative;
+	width: 32.76%;
+	height: 0;
+	padding-bottom: 32.76%;
+	margin-bottom: 6rpx;
+}
+.moment-image-divide-four-wrapper {
+	position: relative;
+	width: 24.23%;
+	height: 0;
+	padding-bottom: 24.23%;
+	margin-bottom: 6rpx;
+}
+.moment-image-divide-two-wrapper image,
+.moment-image-divide-three-wrapper image,
+.moment-image-divide-four-wrapper image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.moment-image-one-horizontal {
+	width: 500rpx;
+	height: 286rpx;
+}
+.moment-image-one-vertical {
+	width: 250rpx;
+	height: 400rpx;
+}
+.moment-image-divide-two {
+	width: 290rpx;
+	height: 290rpx;
+}
+.moment-image-divide-three {
+	width: 192rpx;
+	height: 192rpx;
+}
+.moment-image-divide-four {
+	width: 142rpx;
+	height: 142rpx;
+}
+

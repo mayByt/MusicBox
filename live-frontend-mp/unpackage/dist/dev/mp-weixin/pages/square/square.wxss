@@ -1,0 +1,132 @@
+
+.square-root {
+	height: 100%;
+}
+.line {
+	height: 2rpx;
+	background-color: #f3f3f3;
+}
+
+/* tab导航 */
+.tab-nav-main-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	border-bottom: 2rpx solid #f3f3f3;
+}
+.tab-nav-main {
+	display: inline-flex;
+	flex-direction: row;
+	justify-content: center;
+	position: relative;
+}
+.tab-nav-list {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	font-size: 0;
+}
+.tab-nav-item {
+	font-size: 30rpx;
+	/* line-height: 76rpx; */
+	padding: 0 20rpx;
+	padding-bottom: 20rpx;
+	margin: 0 8rpx;
+}
+.tab-nav-item-active {
+	font-weight: bold;
+}
+.tab-nav-underline {
+	position: absolute;
+	bottom: -2rpx;
+	left: 4rpx;
+	height: 4rpx;
+	border-radius: 2rpx;
+	background-color: #f6423d;
+}
+.tab-nav-underline-animation {
+	transition-duration: 200ms;
+	transition-property: left;
+}
+
+/* tab内容 */
+.tab-content {
+	height: 100%;
+}
+.tab-content-item {
+	overflow-y: auto;
+}
+
+/* 发布动态按钮 */
+.open-popup {
+	position: absolute;
+	bottom: 30rpx;
+	left: 30rpx;
+	width: 88rpx;
+	height: 88rpx;
+	border-radius: 50%;
+	background-color: #fd4445;
+}
+.open-popup-horizontal {
+	width: 46rpx;
+	height: 4rpx;
+	background-color: #ffffff;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.open-popup-vertical {
+	width: 4rpx;
+	height: 46rpx;
+	background-color: #ffffff;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+/* 发动态弹层 */
+.popup {
+
+
+
+
+	height: 220rpx;
+
+
+	border-top-left-radius: 50rpx;
+	border-top-right-radius: 50rpx;
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-start;
+	padding-top: 40rpx;
+	font-size: 30rpx;
+	line-height: 2;
+	color: #7F7F7F;
+	text-align: center;
+}
+.popup .popup-publish-image-wrapper {
+	background-color: #fd4445;
+	width: 132rpx;
+	height: 132rpx;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.popup-publish-image-moment {
+	width: 60rpx;
+	height: 60rpx;
+}
+.popup-publish-image-video {
+	width: 64rpx;
+	height: 64rpx;
+}
+

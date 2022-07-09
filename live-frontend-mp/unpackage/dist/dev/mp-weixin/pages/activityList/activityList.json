@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "演出",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 60,
+  "usingComponents": {}
+}

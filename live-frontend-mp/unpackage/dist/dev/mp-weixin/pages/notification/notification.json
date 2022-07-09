@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 60,
+  "usingComponents": {
+    "moment": "/components/moment/moment",
+    "reply-to-moment-comment": "/components/replyToMomentComment/replyToMomentComment"
+  }
+}

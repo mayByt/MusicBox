@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "广场",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 60,
+  "usingComponents": {
+    "moment": "/components/moment/moment",
+    "video-item": "/components/videoItem/videoItem",
+    "image-item": "/components/imageItem/imageItem",
+    "uni-popup": "/components/uni-popup/uni-popup"
+  }
+}

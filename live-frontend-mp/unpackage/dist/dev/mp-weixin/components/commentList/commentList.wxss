@@ -1,0 +1,13 @@
+
+.comment-list{
+	padding-bottom: 90rpx;
+}
+.comment-title {
+	padding: 0 30rpx;
+	font-size: 30rpx;
+	font-weight: bold;
+	margin-top: 30rpx;
+	margin-bottom: 10rpx;
+	color: #444;
+}
+

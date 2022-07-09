@@ -1,0 +1,160 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 搜索框 */
+.search {
+	display: flex;
+	flex-direction: row;
+	margin: 8rpx 0 12rpx 0;
+	font-size: 30rpx;
+}
+.search-icon {
+	width: 46rpx;
+	height: 46rpx;
+	margin-left: -8rpx;
+}
+.search-input {
+	flex: 1;
+	padding-left: 20rpx;
+	padding-top: 2rpx;
+}
+.search-input:focus {
+	padding-left: 20rpx;
+}
+.search-input-placeholder {
+	font-size: 30rpx;
+	padding-top: 2rpx;
+}
+/* 话题 */
+.topic-list {
+	margin-top: 30rpx;
+}
+.topic-item {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 30rpx;
+}
+.topic-cover {
+	width: 140rpx;
+	height: 140rpx;
+	flex-shrink: 0;
+	margin-right: 20rpx;
+}
+.topic-info {
+	width: 530rpx;
+}
+.topic-name {
+	font-size: 32rpx;
+	color: #333;
+	margin-bottom: 12rpx;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.topic-create-user {
+	font-size: 24rpx;
+	color: #3F3F3F;
+	margin-bottom: 12rpx;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.topic-moment-count {
+	font-size: 24rpx;
+	color: #828282;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+

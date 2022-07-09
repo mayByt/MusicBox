@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/square/square",
+    "pages/publishMoment/publishMoment",
+    "pages/discover/discover",
+    "pages/me/me",
+    "pages/momentDetail/momentDetail",
+    "pages/childrenComment/childrenComment",
+    "pages/videoDetail/videoDetail",
+    "pages/momentList/momentList",
+    "pages/activityList/activityList",
+    "pages/friendList/friendList",
+    "pages/videoList/videoList",
+    "pages/settingList/settingList",
+    "pages/feedback/feedback",
+    "pages/userInfo/userInfo",
+    "pages/cityList/cityList",
+    "pages/topicList/topicList",
+    "pages/notification/notification"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Live",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#515151",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/icon/tab_index.png",
+        "selectedIconPath": "static/icon/tab_index_selected.png"
+      },
+      {
+        "pagePath": "pages/square/square",
+        "text": "广场",
+        "iconPath": "static/icon/tab_square.png",
+        "selectedIconPath": "static/icon/tab_square_selected.png"
+      },
+      {
+        "pagePath": "pages/discover/discover",
+        "text": "发现",
+        "iconPath": "static/icon/tab_discover.png",
+        "selectedIconPath": "static/icon/tab_discover_selected.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "static/icon/tab_me.png",
+        "selectedIconPath": "static/icon/tab_me_selected.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

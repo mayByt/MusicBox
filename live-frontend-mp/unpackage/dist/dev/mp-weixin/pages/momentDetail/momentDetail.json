@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "moment": "/components/moment/moment",
+    "comment-list": "/components/commentList/commentList",
+    "moment-detail-repost": "/components/momentDetailRepost/momentDetailRepost",
+    "moment-detail-like": "/components/momentDetailLike/momentDetailLike",
+    "publish-comment": "/components/publishComment/publishComment"
+  }
+}

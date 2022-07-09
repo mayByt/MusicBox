@@ -1,0 +1,1 @@
+<view><city-select class="vue-ref" vue-id="1597a120-1" formatName="{{formatName}}" obtainCitys="{{obtainCitys}}" isSearch="{{true}}" data-ref="citys" data-event-opts="{{[['^cityClick',[['cityClick']]]]}}" bind:cityClick="__e" bind:__l="__l"></city-select></view>

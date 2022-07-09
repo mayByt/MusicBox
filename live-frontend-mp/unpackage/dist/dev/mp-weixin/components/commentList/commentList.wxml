@@ -1,0 +1,1 @@
+<view class="comment-list"><view class="comment-title">{{''+title+''}}</view><block wx:for="{{commentList}}" wx:for-item="c" wx:for-index="__i0__"><comment vue-id="{{'8fd8a074-1-'+__i0__}}" comment="{{c}}" parentId="{{parentId}}" bind:__l="__l"></comment></block></view>

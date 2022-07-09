@@ -1,0 +1,25 @@
+
+.image-root {}
+.image-date {
+	height: 56rpx;
+	box-sizing: border-box;
+	padding-top: 10rpx;
+	padding-left: 6rpx;
+	font-size: 26rpx;
+	color: #8A8A8A;
+}
+.image-item-list {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+.image-item {
+	width: 246rpx;
+	height: 246rpx;
+	margin-bottom: 6rpx;
+}
+.image-item-margin-right {
+	margin-right: 6rpx;
+}
+

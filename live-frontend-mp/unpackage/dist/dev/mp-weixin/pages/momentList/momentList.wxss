@@ -1,0 +1,37 @@
+
+.moment-list-root {
+	padding-top: 10rpx;
+}
+.moment-list-topic {
+	height: 470rpx;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 12rpx solid #F5F5F5;
+}
+.moment-list-topic-name {
+	text-align: center;
+	position: relative;
+	font-size: 36rpx;
+	color: white;
+	padding: 20rpx 30rpx;
+	border-top: 4rpx solid hsla(0, 0%, 100%, .39);
+	border-bottom: 4rpx solid hsla(0, 0%, 100%, .39);
+}
+.moment-list-topic-user-count {
+	font-size: 28rpx;
+	color: white;
+	margin-top: -20rpx;
+	z-index: 1;
+}
+.moment-list-title {
+	padding: 0 30rpx;
+	font-size: 30rpx;
+	font-weight: bold;
+	margin-top: 30rpx;
+	margin-bottom: 10rpx;
+	color: #444;
+}
+

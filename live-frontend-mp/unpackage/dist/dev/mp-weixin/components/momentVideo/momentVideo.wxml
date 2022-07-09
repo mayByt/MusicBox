@@ -1,0 +1,1 @@
+<view class="moment-video-cover-container"><view class="moment-video-cover-wrapper"><image class="moment-video-cover" src="{{moment.video.coverUrl}}" mode="aspectFill"></image></view><image class="moment-video-play" src="../../static/icon/video-play.png" mode="aspectFill"></image></view>

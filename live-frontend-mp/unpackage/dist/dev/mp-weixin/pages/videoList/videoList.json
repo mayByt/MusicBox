@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 60,
+  "usingComponents": {
+    "video-item": "/components/videoItem/videoItem"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 60,
+  "usingComponents": {
+    "moment": "/components/moment/moment"
+  }
+}

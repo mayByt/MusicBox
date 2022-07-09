@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "comment": "/components/comment/comment",
+    "comment-list": "/components/commentList/commentList",
+    "publish-comment": "/components/publishComment/publishComment"
+  }
+}
