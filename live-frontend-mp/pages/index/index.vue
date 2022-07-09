@@ -4,11 +4,17 @@
 		<view class="login-mask" @click="login"></view>
 
 		<!-- 搜索框 -->
-		<view class="search">
+		<uni-search-bar placeholder="搜索喜欢的内容" radius="100" @confirm="search">
+			<template v-slot:searchIcon>
+				<uni-icons  color="#999999" size="18" type="home" />
+			</template>
+		</uni-search-bar>
+		
+		<!-- <view class="search">
 			<image src="../../static/icon/search.png" class="search-icon"></image>
 			<input placeholder="搜索喜欢的内容" placeholder-class="search-input-placeholder" maxlength="20" class="search-input"
 			 confirm-type="search" @confirm="searchMe" />
-		</view>
+		</view> -->
 
 		<!-- 轮播图 -->
 		<swiper :indicator-dots="true" :autoplay="true" class="swiper" circular="true">
@@ -224,7 +230,8 @@
 	export default {
 		data() {
 			return {
-				swiperList: []
+				swiperList: [],
+				searchValue: ''
 			}
 		},
 
@@ -273,6 +280,12 @@
 		methods: {
 			login() {
 				console.log("login");
+			},
+			search(res) {
+				uni.showToast({
+					title: '搜索：' + res.value,
+					icon: 'none'
+				})
 			}
 
 		}
@@ -281,7 +294,7 @@
 
 <style>
 	/* 搜索框 */
-	.search {
+/* 	.search {
 		display: flex;
 		flex-direction: row;
 		margin: 8rpx 0 12rpx 0;
@@ -300,7 +313,7 @@
 
 	.search-input:focus {
 		padding-left: 20rpx;
-	}
+	} */
 
 	/* 轮播图 */
 	.swiper {

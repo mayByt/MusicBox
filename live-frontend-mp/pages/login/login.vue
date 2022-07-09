@@ -55,11 +55,11 @@
 			// #ifdef H5
 			this.setLoginUser({
 				"artistId": 86643,
-				"artistName": "fddm",
-				"userId": 12,
-				"userName": "范超",
-				"userAvatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoURLSSqNQ2ZdoUkmv6fcZc7K2hvcia54DS1n0OSPYDoukqXVnZj5pwA9Gb28wg8gdMsiaVRQjpgUfw/132",
-				"unionId": "",
+				"artistName": "awesome",
+				"userId": 25,
+				"userName": "天",
+				"userAvatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTI7bQEDmf6wXs5aZO82wlKMC48icPvgJDpfe1ayWv57nLm7QnrcNwlZIMrCCVfiaKT8xSr1XhYkUFZg/132",
+				"unionId": "o-6hX60Kzblb4PaUGQcLo_4nupUY",
 				"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1bmlvbklkIjoiIiwiaXNzIjoibWUuZmFuY2hhb28iLCJhcnRpc3RJZCI6ODY2NDMsImFydGlzdE5hbWUiOiJmZGRtIiwidXNlck5hbWUiOiLojIPotoUiLCJpYXQiOjE1OTM5NDQxMjIxNjcsInVzZXJJZCI6MTJ9.kgHJI1HN87H8gkuKVMZobJLIXwuqmQFFzT0Pi8wD2Gs"
 			});
 			uni.switchTab({
