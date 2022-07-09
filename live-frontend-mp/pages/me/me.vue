@@ -2,7 +2,7 @@
 	<view class="me-root">
 		<view class="me-user-wrapper">
 			<!-- 头像 -->
-			<image class="me-user-avatar" mode="aspectFill" src="https://tvax1.sinaimg.cn/crop.0.0.1002.1002.180/644c31cbly8fus4o17o9wj20ru0rutbb.jpg?KID=imgbed,tva&Expires=1590514391&ssig=k4anARnCHE"></image>
+			<image class="me-user-avatar" mode="aspectFill" :src="imgUrl"></image>
 
 			<view class="me-user-info">
 				<!-- 用户名 -->
@@ -73,7 +73,8 @@
 	export default {
 		data() {
 			return {
-				userInfo: {}
+				userInfo: {},
+				imgUrl:""
 			}
 		},
 
@@ -86,6 +87,7 @@
 			async loadUserInfo() {
 				let [userInfoData] = await httpUtils.postJson("/user/getUserInfo", {});
 				this.userInfo = userInfoData.body;
+				this.imgUrl = userInfoData.body.avatarUrl;
 			},
 		}
 	}

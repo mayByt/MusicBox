@@ -207,7 +207,8 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
 {
   data: function data() {
     return {
-      userInfo: {} };
+      userInfo: {},
+      imgUrl: "" };
 
   },
 
@@ -219,7 +220,8 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
   methods: {
     loadUserInfo: function loadUserInfo() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$httpUtils$post, _yield$httpUtils$post2, userInfoData;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
                   _httpUtils.default.postJson("/user/getUserInfo", {}));case 2:_yield$httpUtils$post = _context2.sent;_yield$httpUtils$post2 = _slicedToArray(_yield$httpUtils$post, 1);userInfoData = _yield$httpUtils$post2[0];
-                _this2.userInfo = userInfoData.body;case 6:case "end":return _context2.stop();}}}, _callee2);}))();
+                _this2.userInfo = userInfoData.body;
+                _this2.imgUrl = userInfoData.body.avatarUrl;case 7:case "end":return _context2.stop();}}}, _callee2);}))();
     } } };exports.default = _default;
 
 /***/ }),
