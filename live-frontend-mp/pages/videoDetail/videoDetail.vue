@@ -2,7 +2,7 @@
 	<view>
 		<!-- 播放器 -->
 		<view class="video-detail-player-wrapper">
-			<video class="video-detail-player" :src="moment.video.url" controls></video>
+			<video class="video-detail-player" :src="moment.video.url" controls ></video>
 		</view>
 
 		<!-- 标题，描述 -->
@@ -16,7 +16,8 @@
 			<view class="video-detail-tag">
 			</view>
 			<view class="video-detail-create-time" v-show="textContentShow">
-				{{moment.createTime | dateFormat('yyyy-MM-dd')}} 发布
+				{{moment.createTime}} 发布
+				<!-- {{moment.createTime | dateFormat('yyyy-MM-dd')}} 发布 -->
 			</view>
 			<view class="video-detail-text-content" v-show="textContentShow">
 				{{moment.textContent}}

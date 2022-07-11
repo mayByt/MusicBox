@@ -125,14 +125,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var f0 = _vm._f("dateFormat")(_vm.moment.createTime, "yyyy-MM-dd")
-
   var m0 = parseInt("0")
   _vm.$mp.data = Object.assign(
     {},
     {
       $root: {
-        f0: f0,
         m0: m0
       }
     }
@@ -171,6 +168,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 5));
+
 
 
 

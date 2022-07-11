@@ -4,9 +4,9 @@
 		<view class="login-mask" @click="login"></view>
 
 		<!-- 搜索框 -->
-		<uni-search-bar placeholder="搜索喜欢的内容" radius="100" @confirm="search">
+		<uni-search-bar radius="10" placeholder="搜索自己喜欢的内容" clearButton="auto" @confirm="search">
 			<template v-slot:searchIcon>
-				<uni-icons  color="#999999" size="18" type="home" />
+					<uni-icons  color="#ff5500" size="18" type="search" />
 			</template>
 		</uni-search-bar>
 		

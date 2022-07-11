@@ -60,7 +60,7 @@
 				"userName": "天",
 				"userAvatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTI7bQEDmf6wXs5aZO82wlKMC48icPvgJDpfe1ayWv57nLm7QnrcNwlZIMrCCVfiaKT8xSr1XhYkUFZg/132",
 				"unionId": "o-6hX60Kzblb4PaUGQcLo_4nupUY",
-				"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1bmlvbklkIjoiIiwiaXNzIjoibWUuZmFuY2hhb28iLCJhcnRpc3RJZCI6ODY2NDMsImFydGlzdE5hbWUiOiJmZGRtIiwidXNlck5hbWUiOiLojIPotoUiLCJpYXQiOjE1OTM5NDQxMjIxNjcsInVzZXJJZCI6MTJ9.kgHJI1HN87H8gkuKVMZobJLIXwuqmQFFzT0Pi8wD2Gs"
+				"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1bmlvbklkIjoiby02aFg2MEt6YmxiNFBhVUdRY0xvXzRudXBVWSIsImlzcyI6ImNuLmVncmV0IiwiYXJ0aXN0SWQiOjg2NjQzLCJhcnRpc3ROYW1lIjoiYXdlc29tZSIsInVzZXJOYW1lIjoi5aSpIiwiaWF0IjoxNjU3MzcwOTA0NTUyLCJ1c2VySWQiOjI1fQ.-CC4fBh2ozuyvLDc-6-rC-e3KvsHcXQY69VzvclYKrk"
 			});
 			uni.switchTab({
 				url: '../index/index'
