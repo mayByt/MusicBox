@@ -80,7 +80,7 @@ var components
 try {
   components = {
     comment: function() {
-      return __webpack_require__.e(/*! import() | components/comment/comment */ "components/comment/comment").then(__webpack_require__.bind(null, /*! @/components/comment/comment.vue */ 271))
+      return __webpack_require__.e(/*! import() | components/comment/comment */ "components/comment/comment").then(__webpack_require__.bind(null, /*! @/components/comment/comment.vue */ 279))
     }
   }
 } catch (e) {
@@ -158,7 +158,7 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
 //
 //
 //
-var comment = function comment() {__webpack_require__.e(/*! require.ensure | components/comment/comment */ "components/comment/comment").then((function () {return resolve(__webpack_require__(/*! ../../components/comment/comment.vue */ 271));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { comment: comment }, data: function data() {return {};
+var comment = function comment() {__webpack_require__.e(/*! require.ensure | components/comment/comment */ "components/comment/comment").then((function () {return resolve(__webpack_require__(/*! ../../components/comment/comment.vue */ 279));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { comment: comment }, data: function data() {return {};
 
 
   },

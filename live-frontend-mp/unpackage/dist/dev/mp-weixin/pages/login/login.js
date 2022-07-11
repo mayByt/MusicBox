@@ -226,7 +226,7 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
             lang: 'zh_CN',
             success: function success(res) {
               console.log("uni.getUserProfile：", res);
-              // _this2.login(_this2.code, res.userInfo, res.encryptedData, res.iv);
+              _this2.login(_this2.code, res.userInfo, res.encryptedData, res.iv);
               /* uni.login({
                                                                                   	provider: this.provider,
                                                                                   	success: (res) => {
