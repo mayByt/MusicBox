@@ -1,6 +1,6 @@
 <template>
 	<view class="login-root">
-		<image class="login-logo" src="https://fanchaoo-live.oss-cn-beijing.aliyuncs.com/fddm/image/15921064553848e4aba0127964935be9cfdb647670667.jpeg"
+		<image class="login-logo" src="https://s2.loli.net/2022/07/11/RaFYWoIAlfQhvDy.png"
 		 mode="aspectFill"></image>
 		<view class="login-button-wrapper">
 			<view class="login-wechat-icon">

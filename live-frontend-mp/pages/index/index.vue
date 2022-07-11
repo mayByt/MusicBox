@@ -17,9 +17,9 @@
 		</view> -->
 
 		<!-- 轮播图 -->
-		<swiper :indicator-dots="true" :autoplay="true" class="swiper" circular="true">
+		<swiper :indicator-dots="true" :autoplay="true" current="0" class="swiper" circular="true">
 			<swiper-item v-for="swiper in swiperList">
-				<navigator open-type="navigate" :url="'../video?trailerId=' + swiper.movieId">
+				<navigator open-type="navigate" :url="'../../pages/videoDetail/videoDetail?momentId=' + swiper.momentId">
 					<image :src="swiper.coverUrl" mode="aspectFill" class="swiper-image"></image>
 				</navigator>
 			</swiper-item>
@@ -30,196 +30,19 @@
 			<view class="block-title">
 				最近热门
 			</view>
-			<view class="block-item-list">
+			<view class="block-item-list" v-for="blockItem in blockList">
 				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
+					<image class="block-item-image" :src="blockItem.coverUrl" mode="aspectFill"></image>
 					<view class="block-item-title">
-						我是余欢水
+						{{blockItem.title}}
 					</view>
 					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
+						{{blockItem.desc}}
 					</view>
 				</view>
 			</view>
 		</view>
-		<view class="block">
-			<view class="block-title">
-				最新发布
-			</view>
-			<view class="block-item-list">
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-				<view class="block-item">
-					<image class="block-item-image" :src="swiperList[0].coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						我是余欢水
-					</view>
-					<view class="block-item-desc">
-						官方吐槽不止
-					</view>
-				</view>
-			</view>
-		</view>
+		
 	</view>
 
 </template>
@@ -231,6 +54,7 @@
 		data() {
 			return {
 				swiperList: [],
+				blockList: [],
 				searchValue: ''
 			}
 		},
@@ -249,15 +73,26 @@
 			}
 
 			// 轮播图
-			let [data] = await httpUtils.postJson("/index/queryIndexSwiper");
-			this.swiperList = data.body;
+			let [tempData1] = await httpUtils.postJson("/index/queryIndexSwiper");
+			this.swiperList = tempData1.body;
+			
+			// 最近热门板块
+			let [tempData2] = await httpUtils.postJson("/index/queryIndexBlock");
+			this.blockList = tempData2.body;
 		},	
 
 		async onPullDownRefresh() {
 			this.swiperList = [];
+			this.blockList = [];
 			// 轮播图
-			let [data] = await httpUtils.postJson("/index/queryIndexSwiper");
-			this.swiperList = data.body;
+			let [tempData1] = await httpUtils.postJson("/index/queryIndexSwiper");
+			this.swiperList = tempData1.body;
+			
+			// 最近热门板块
+			let [tempData2] = await httpUtils.postJson("/index/queryIndexBlock");
+			this.blockList = tempData2.body;
+			
+			
 			uni.stopPullDownRefresh();
 		},
 
