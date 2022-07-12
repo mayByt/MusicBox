@@ -281,7 +281,7 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
     momentType: function momentType() {
       if (this.imageList && this.imageList.length > 0) {
         return "IMAGE";
-      } else if (this.video && this.video.url) {
+      } else if (this.video.url > 0) {
         return "VIDEO";
       } else {
         return "TEXT";
@@ -304,15 +304,15 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
         header: {
           "token": uni.getStorageSync("loginUser").token },
 
-        success: function () {var _success = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(uploadFileRes) {var uploadData, _yield$httpUtils$post, _yield$httpUtils$post2, data;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+        success: function () {var _success = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(uploadFileRes) {var uploadData;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
                     uploadData = JSON.parse(uploadFileRes.data);
                     _this.video.url = uploadData.body;
-                    console.log("上传完成：" + uploadFileRes.data);_context.next = 5;return (
-                      _httpUtils.default.postJson("/video/queryVideoCover", {
-                        videoPath: uploadFileRes.data }));case 5:_yield$httpUtils$post = _context.sent;_yield$httpUtils$post2 = _slicedToArray(_yield$httpUtils$post, 1);data = _yield$httpUtils$post2[0];
-
-                    _this.videoCoverList = data.body;case 9:case "end":return _context.stop();}}}, _callee);}));function success(_x) {return _success.apply(this, arguments);}return success;}() });
-
+                    console.log("上传完成：" + uploadFileRes.data);
+                    // let [data] = await httpUtils.postJson("/video/queryVideoCover", {
+                    // 	videoPath: uploadFileRes.data
+                    // });
+                    // this.videoCoverList = data.body;
+                  case 3:case "end":return _context.stop();}}}, _callee);}));function success(_x) {return _success.apply(this, arguments);}return success;}() });
 
 
       uploadTask.onProgressUpdate(function (res) {
@@ -351,6 +351,7 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
                         src: tempFilePath }));case 9:_yield$uni$getImageIn = _context2.sent;_yield$uni$getImageIn2 = _slicedToArray(_yield$uni$getImageIn, 2);error = _yield$uni$getImageIn2[0];imageInfo = _yield$uni$getImageIn2[1];
 
                     _this2.imageTempList.push({
+
                       path: tempFilePath,
                       width: imageInfo.width,
                       height: imageInfo.height });_context2.next = 4;break;case 16:case "end":return _context2.stop();}}}, _callee2);}));function success(_x2) {return _success2.apply(this, arguments);}return success;}() });
@@ -394,7 +395,7 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
     },
 
     // 发动态，转发动态
-    publish: function publish() {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var param, _yield$httpUtils$post3, _yield$httpUtils$post4, repostMomentData, repostMomentError, i, imageTemp, _yield$httpUtils$uplo3, _yield$httpUtils$uplo4, url, _param, _yield$httpUtils$post5, _yield$httpUtils$post6, publishMomentData, publishMomentError;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:if (!(
+    publish: function publish() {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var param, _yield$httpUtils$post, _yield$httpUtils$post2, repostMomentData, repostMomentError, i, imageTemp, _yield$httpUtils$uplo3, _yield$httpUtils$uplo4, url, _param, _yield$httpUtils$post3, _yield$httpUtils$post4, publishMomentData, publishMomentError;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:if (!(
 
                 _this4.publishType === 'REPOST')) {_context4.next = 11;break;}
                 // 转发
@@ -402,7 +403,7 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
                   repostMomentId: _this4.repostMomentId,
                   textContent: _this4.textContent };_context4.next = 4;return (
 
-                  _httpUtils.default.postJson("/repost/repost", param));case 4:_yield$httpUtils$post3 = _context4.sent;_yield$httpUtils$post4 = _slicedToArray(_yield$httpUtils$post3, 2);repostMomentData = _yield$httpUtils$post4[0];repostMomentError = _yield$httpUtils$post4[1];
+                  _httpUtils.default.postJson("/repost/repost", param));case 4:_yield$httpUtils$post = _context4.sent;_yield$httpUtils$post2 = _slicedToArray(_yield$httpUtils$post, 2);repostMomentData = _yield$httpUtils$post2[0];repostMomentError = _yield$httpUtils$post2[1];
 
                 if (!repostMomentError) {
                   uni.reLaunch({
@@ -441,7 +442,7 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
                   _param.video = _this4.video;
                 }_context4.next = 31;return (
 
-                  _httpUtils.default.postJson("/moment/publishMoment", _param));case 31:_yield$httpUtils$post5 = _context4.sent;_yield$httpUtils$post6 = _slicedToArray(_yield$httpUtils$post5, 2);publishMomentData = _yield$httpUtils$post6[0];publishMomentError = _yield$httpUtils$post6[1];
+                  _httpUtils.default.postJson("/moment/publishMoment", _param));case 31:_yield$httpUtils$post3 = _context4.sent;_yield$httpUtils$post4 = _slicedToArray(_yield$httpUtils$post3, 2);publishMomentData = _yield$httpUtils$post4[0];publishMomentError = _yield$httpUtils$post4[1];
                 uni.hideLoading();
 
                 if (!publishMomentError) {

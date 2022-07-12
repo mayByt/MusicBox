@@ -142,7 +142,7 @@
 			momentType() {
 				if (this.imageList && this.imageList.length > 0) {
 					return "IMAGE";
-				} else if (this.video && this.video.url) {
+				} else if (this.video.url > 0) {
 					return "VIDEO";
 				} else {
 					return "TEXT";
@@ -169,10 +169,10 @@
 						let uploadData = JSON.parse(uploadFileRes.data);
 						this.video.url = uploadData.body;
 						console.log("上传完成：" + uploadFileRes.data);
-						let [data] = await httpUtils.postJson("/video/queryVideoCover", {
-							videoPath: uploadFileRes.data
-						});
-						this.videoCoverList = data.body;
+						// let [data] = await httpUtils.postJson("/video/queryVideoCover", {
+						// 	videoPath: uploadFileRes.data
+						// });
+						// this.videoCoverList = data.body;
 					}
 				});
 
@@ -212,6 +212,7 @@
 								src: tempFilePath
 							});
 							this.imageTempList.push({
+					
 								path: tempFilePath,
 								width: imageInfo.width,
 								height: imageInfo.height

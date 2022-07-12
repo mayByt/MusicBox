@@ -17,7 +17,7 @@
 		</view> -->
 
 		<!-- 轮播图 -->
-		<swiper :indicator-dots="true" :autoplay="true" current="0" class="swiper" circular="true">
+		<swiper :indicator-dots="true"  :autoplay="true" current="0" class="swiper" circular="true">
 			<swiper-item v-for="swiper in swiperList">
 				<navigator open-type="navigate" :url="'../../pages/videoDetail/videoDetail?momentId=' + swiper.momentId">
 					<image :src="swiper.coverUrl" mode="aspectFill" class="swiper-image"></image>
