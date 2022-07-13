@@ -241,6 +241,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
 var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/util/httpUtils.js */ 16));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default =
 
 {
@@ -281,7 +285,7 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
     momentType: function momentType() {
       if (this.imageList && this.imageList.length > 0) {
         return "IMAGE";
-      } else if (this.video.url > 0) {
+      } else if (this.videoUploadComplete) {
         return "VIDEO";
       } else {
         return "TEXT";
@@ -304,15 +308,22 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
         header: {
           "token": uni.getStorageSync("loginUser").token },
 
-        success: function () {var _success = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(uploadFileRes) {var uploadData;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
-                    uploadData = JSON.parse(uploadFileRes.data);
-                    _this.video.url = uploadData.body;
-                    console.log("上传完成：" + uploadFileRes.data);
-                    // let [data] = await httpUtils.postJson("/video/queryVideoCover", {
-                    // 	videoPath: uploadFileRes.data
-                    // });
-                    // this.videoCoverList = data.body;
-                  case 3:case "end":return _context.stop();}}}, _callee);}));function success(_x) {return _success.apply(this, arguments);}return success;}() });
+        success: function success(uploadFileRes) {
+          console.log('成功了');
+          var uploadData = JSON.parse(uploadFileRes.data);
+          _this.video.url = uploadData.body;
+          console.log("上传完成：" + uploadFileRes.data);
+          // let [data] = await httpUtils.postJson("/video/queryVideoCover", {
+          // 	videoPath: uploadFileRes.data
+          // });
+          // this.videoCoverList = data.body;
+        },
+        fail: function fail(res) {
+          console.log(res);
+        },
+        complete: function complete(res) {
+          console.log('This is complete' + '调用完成');
+        } });
 
 
       uploadTask.onProgressUpdate(function (res) {
@@ -327,6 +338,7 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
       this.repostMomentId = options.repostMomentId;
     }
 
+
   },
   methods: {
     // 选择图片
@@ -335,26 +347,26 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
         count: 9,
         sizeType: ['original'],
         sourceType: ['album'],
-        success: function () {var _success2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(res) {var i, tempFilePath, _yield$uni$getImageIn, _yield$uni$getImageIn2, error, imageInfo;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:if (!(
-                    _this2.imageTempList.length + res.tempFilePaths.length > 9)) {_context2.next = 3;break;}
+        success: function () {var _success = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(res) {var i, tempFilePath, _yield$uni$getImageIn, _yield$uni$getImageIn2, error, imageInfo;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:if (!(
+                    _this2.imageTempList.length + res.tempFilePaths.length > 9)) {_context.next = 3;break;}
                     uni.showToast({
                       title: "最多上传9张图片",
-                      duration: 2000 });return _context2.abrupt("return");case 3:_context2.t0 = _regenerator.default.keys(
+                      duration: 2000 });return _context.abrupt("return");case 3:_context.t0 = _regenerator.default.keys(
 
 
 
 
-                    res.tempFilePaths);case 4:if ((_context2.t1 = _context2.t0()).done) {_context2.next = 16;break;}i = _context2.t1.value;
-                    tempFilePath = res.tempFilePaths[i];_context2.next = 9;return (
+                    res.tempFilePaths);case 4:if ((_context.t1 = _context.t0()).done) {_context.next = 16;break;}i = _context.t1.value;
+                    tempFilePath = res.tempFilePaths[i];_context.next = 9;return (
 
                       uni.getImageInfo({
-                        src: tempFilePath }));case 9:_yield$uni$getImageIn = _context2.sent;_yield$uni$getImageIn2 = _slicedToArray(_yield$uni$getImageIn, 2);error = _yield$uni$getImageIn2[0];imageInfo = _yield$uni$getImageIn2[1];
+                        src: tempFilePath }));case 9:_yield$uni$getImageIn = _context.sent;_yield$uni$getImageIn2 = _slicedToArray(_yield$uni$getImageIn, 2);error = _yield$uni$getImageIn2[0];imageInfo = _yield$uni$getImageIn2[1];
 
                     _this2.imageTempList.push({
 
                       path: tempFilePath,
                       width: imageInfo.width,
-                      height: imageInfo.height });_context2.next = 4;break;case 16:case "end":return _context2.stop();}}}, _callee2);}));function success(_x2) {return _success2.apply(this, arguments);}return success;}() });
+                      height: imageInfo.height });_context.next = 4;break;case 16:case "end":return _context.stop();}}}, _callee);}));function success(_x) {return _success.apply(this, arguments);}return success;}() });
 
 
 
@@ -373,16 +385,16 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
         count: 1,
         sizeType: ['original'],
         sourceType: ['album'],
-        success: function () {var _success3 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3(res) {var tempFilePath, _yield$uni$getImageIn3, _yield$uni$getImageIn4, error, imageInfo, _yield$httpUtils$uplo, _yield$httpUtils$uplo2, url;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
-                    tempFilePath = res.tempFilePaths[0];_context3.next = 3;return (
+        success: function () {var _success2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(res) {var tempFilePath, _yield$uni$getImageIn3, _yield$uni$getImageIn4, error, imageInfo, _yield$httpUtils$uplo, _yield$httpUtils$uplo2, url;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                    tempFilePath = res.tempFilePaths[0];_context2.next = 3;return (
                       uni.getImageInfo({
-                        src: tempFilePath }));case 3:_yield$uni$getImageIn3 = _context3.sent;_yield$uni$getImageIn4 = _slicedToArray(_yield$uni$getImageIn3, 2);error = _yield$uni$getImageIn4[0];imageInfo = _yield$uni$getImageIn4[1];_context3.next = 9;return (
+                        src: tempFilePath }));case 3:_yield$uni$getImageIn3 = _context2.sent;_yield$uni$getImageIn4 = _slicedToArray(_yield$uni$getImageIn3, 2);error = _yield$uni$getImageIn4[0];imageInfo = _yield$uni$getImageIn4[1];_context2.next = 9;return (
 
 
-                      _httpUtils.default.uploadFile(tempFilePath));case 9:_yield$httpUtils$uplo = _context3.sent;_yield$httpUtils$uplo2 = _slicedToArray(_yield$httpUtils$uplo, 1);url = _yield$httpUtils$uplo2[0];
+                      _httpUtils.default.uploadFile(tempFilePath));case 9:_yield$httpUtils$uplo = _context2.sent;_yield$httpUtils$uplo2 = _slicedToArray(_yield$httpUtils$uplo, 1);url = _yield$httpUtils$uplo2[0];
                     _this3.video.coverUrl = url;
                     _this3.video.coverWidth = imageInfo.width;
-                    _this3.video.coverHeight = imageInfo.height;case 15:case "end":return _context3.stop();}}}, _callee3);}));function success(_x3) {return _success3.apply(this, arguments);}return success;}() });
+                    _this3.video.coverHeight = imageInfo.height;case 15:case "end":return _context2.stop();}}}, _callee2);}));function success(_x2) {return _success2.apply(this, arguments);}return success;}() });
 
 
     },
@@ -395,36 +407,36 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
     },
 
     // 发动态，转发动态
-    publish: function publish() {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var param, _yield$httpUtils$post, _yield$httpUtils$post2, repostMomentData, repostMomentError, i, imageTemp, _yield$httpUtils$uplo3, _yield$httpUtils$uplo4, url, _param, _yield$httpUtils$post3, _yield$httpUtils$post4, publishMomentData, publishMomentError;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:if (!(
+    publish: function publish() {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var param, _yield$httpUtils$post, _yield$httpUtils$post2, repostMomentData, repostMomentError, i, imageTemp, _yield$httpUtils$uplo3, _yield$httpUtils$uplo4, url, _param, _yield$httpUtils$post3, _yield$httpUtils$post4, publishMomentData, publishMomentError;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:if (!(
 
-                _this4.publishType === 'REPOST')) {_context4.next = 11;break;}
+                _this4.publishType === 'REPOST')) {_context3.next = 11;break;}
                 // 转发
                 param = {
                   repostMomentId: _this4.repostMomentId,
-                  textContent: _this4.textContent };_context4.next = 4;return (
+                  textContent: _this4.textContent };_context3.next = 4;return (
 
-                  _httpUtils.default.postJson("/repost/repost", param));case 4:_yield$httpUtils$post = _context4.sent;_yield$httpUtils$post2 = _slicedToArray(_yield$httpUtils$post, 2);repostMomentData = _yield$httpUtils$post2[0];repostMomentError = _yield$httpUtils$post2[1];
+                  _httpUtils.default.postJson("/repost/repost", param));case 4:_yield$httpUtils$post = _context3.sent;_yield$httpUtils$post2 = _slicedToArray(_yield$httpUtils$post, 2);repostMomentData = _yield$httpUtils$post2[0];repostMomentError = _yield$httpUtils$post2[1];
 
                 if (!repostMomentError) {
                   uni.reLaunch({
                     url: "../square/square" });
 
-                }_context4.next = 37;break;case 11:
+                }_context3.next = 38;break;case 11:
 
 
                 // 发动态或发视频
                 uni.showLoading({
-                  title: "发布中..." });_context4.t0 = _regenerator.default.keys(
+                  title: "发布中..." });_context3.t0 = _regenerator.default.keys(
 
-                _this4.imageTempList);case 13:if ((_context4.t1 = _context4.t0()).done) {_context4.next = 25;break;}i = _context4.t1.value;
+                _this4.imageTempList);case 13:if ((_context3.t1 = _context3.t0()).done) {_context3.next = 25;break;}i = _context3.t1.value;
 
-                imageTemp = _this4.imageTempList[i];_context4.next = 18;return (
-                  _httpUtils.default.uploadFile(imageTemp.path));case 18:_yield$httpUtils$uplo3 = _context4.sent;_yield$httpUtils$uplo4 = _slicedToArray(_yield$httpUtils$uplo3, 1);url = _yield$httpUtils$uplo4[0];
+                imageTemp = _this4.imageTempList[i];_context3.next = 18;return (
+                  _httpUtils.default.uploadFile(imageTemp.path));case 18:_yield$httpUtils$uplo3 = _context3.sent;_yield$httpUtils$uplo4 = _slicedToArray(_yield$httpUtils$uplo3, 1);url = _yield$httpUtils$uplo4[0];
                 console.log("已上传：" + url);
                 _this4.imageList.push({
                   url: url,
                   width: imageTemp.width,
-                  height: imageTemp.height });_context4.next = 13;break;case 25:
+                  height: imageTemp.height });_context3.next = 13;break;case 25:
 
 
 
@@ -440,16 +452,18 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
                 }
                 if (_this4.momentType === 'VIDEO') {
                   _param.video = _this4.video;
-                }_context4.next = 31;return (
+                }
 
-                  _httpUtils.default.postJson("/moment/publishMoment", _param));case 31:_yield$httpUtils$post3 = _context4.sent;_yield$httpUtils$post4 = _slicedToArray(_yield$httpUtils$post3, 2);publishMomentData = _yield$httpUtils$post4[0];publishMomentError = _yield$httpUtils$post4[1];
+                console.log(_param);_context3.next = 32;return (
+                  _httpUtils.default.postJson("/moment/publishMoment",
+                  _param));case 32:_yield$httpUtils$post3 = _context3.sent;_yield$httpUtils$post4 = _slicedToArray(_yield$httpUtils$post3, 2);publishMomentData = _yield$httpUtils$post4[0];publishMomentError = _yield$httpUtils$post4[1];
                 uni.hideLoading();
 
                 if (!publishMomentError) {
                   uni.reLaunch({
                     url: "../square/square" });
 
-                }case 37:case "end":return _context4.stop();}}}, _callee4);}))();
+                }case 38:case "end":return _context3.stop();}}}, _callee3);}))();
 
 
     } } };exports.default = _default;

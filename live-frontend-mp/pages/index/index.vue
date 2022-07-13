@@ -17,7 +17,7 @@
 		</view> -->
 
 		<!-- 轮播图 -->
-		<swiper :indicator-dots="true"  :autoplay="true" current="0" class="swiper" circular="true">
+		<swiper :indicator-dots="true" indicator-color="rgba(255, 90, 95,0.3)" indicator-active-color="#ff5a5f" :autoplay="true" current="0" class="swiper" circular="true">
 			<swiper-item v-for="swiper in swiperList">
 				<navigator open-type="navigate" :url="'../../pages/videoDetail/videoDetail?momentId=' + swiper.momentId">
 					<image :src="swiper.coverUrl" mode="aspectFill" class="swiper-image"></image>
@@ -30,19 +30,21 @@
 			<view class="block-title">
 				最近热门
 			</view>
-			<view class="block-item-list" v-for="blockItem in blockList">
-				<view class="block-item">
-					<image class="block-item-image" :src="blockItem.coverUrl" mode="aspectFill"></image>
-					<view class="block-item-title">
-						{{blockItem.title}}
-					</view>
-					<view class="block-item-desc">
-						{{blockItem.desc}}
-					</view>
+			<view class="block-item-list">
+				<view class="block-item" v-for="blockItem in blockList">
+					<navigator open-type="navigate" :url="'../../pages/videoDetail/videoDetail?momentId=' + blockItem.momentId">
+						<image class="block-item-image" :src="blockItem.coverUrl" mode="aspectFill"></image>
+						<view class="block-item-title">
+							{{blockItem.title}}
+						</view>
+						<view class="block-item-desc">
+							{{blockItem.desc}}
+						</view>
+					</navigator>
+					
 				</view>
 			</view>
 		</view>
-		
 	</view>
 
 </template>
@@ -157,6 +159,7 @@
 		border-radius: 6rpx;
 		margin-bottom: 32rpx;
 		overflow: hidden;
+		border-radius: 20rpx;
 	}
 
 	.swiper-image {

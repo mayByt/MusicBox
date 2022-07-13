@@ -128,6 +128,8 @@
 
 
 
+
+
 	/* 搜索框 */
 /* 	.search {
 		display: flex;
@@ -156,6 +158,7 @@
 		border-radius: 6rpx;
 		margin-bottom: 32rpx;
 		overflow: hidden;
+		border-radius: 20rpx;
 }
 .swiper-image {
 		width: 690rpx;

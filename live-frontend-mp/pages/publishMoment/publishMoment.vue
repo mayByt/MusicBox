@@ -4,7 +4,8 @@
 		<!-- 视频上传 -->
 		<view class="video-area" v-if="publishType==='VIDEO'">
 			<view class="video-cover-wrapper">
-				<image class="video-cover" v-if="video && video.coverUrl" :src="video.coverUrl" mode="aspectFill"></image>
+				<image class="video-cover" v-if="video && video.coverUrl" :src="video.coverUrl" mode="aspectFill">
+				</image>
 				<view class="video-cover-alternate" v-if="!video || !video.coverUrl">
 					暂未添加封面
 				</view>
@@ -34,9 +35,10 @@
 			<view class="video-choose-cover" @click="chooseVideoCover">
 				上传自定义封面
 			</view>
-			<view class="video-generated-cover" v-if="videoCoverList && videoCoverList.length > 0" v-for="v in videoCoverList">
-				<image :src="v.url" :data-video-cover-url="v.url" :data-video-cover-width="v.width" :data-video-cover-height="v.height"
-				 @click="selectVideoCover"></image>
+			<view class="video-generated-cover" v-if="videoCoverList && videoCoverList.length > 0"
+				v-for="v in videoCoverList">
+				<image :src="v.url" :data-video-cover-url="v.url" :data-video-cover-width="v.width"
+					:data-video-cover-height="v.height" @click="selectVideoCover"></image>
 			</view>
 		</view>
 
@@ -46,8 +48,9 @@
 		</view>
 		<!-- 文本内容 -->
 		<view class="textarea-wrapper">
-			<textarea v-model="textContent" class="textarea" :placeholder="publishType === 'REPOST' ? '说说我的看法...' : '一起聊聊吧~' "
-			 @click="textareaFocused=true"></textarea>
+			<textarea v-model="textContent" class="textarea"
+				:placeholder="publishType === 'REPOST' ? '说说我的看法...' : '一起聊聊吧~' "
+				@click="textareaFocused=true"></textarea>
 		</view>
 
 		<!-- 图片区域 -->
@@ -75,7 +78,8 @@
 		<view class="edit-info">
 			<view class="edit-info-image-wrapper">
 				<view class="edit-info-image-view">
-					<image src="../../static/icon/publish_photo.png" class="edit-info-image" @click="chooseImage"></image>
+					<image src="../../static/icon/publish_photo.png" class="edit-info-image" @click="chooseImage">
+					</image>
 				</view>
 				<view class="edit-info-image-view">
 					<image src="../../static/icon/publish_at.png" class="edit-info-image"></image>
@@ -142,7 +146,7 @@
 			momentType() {
 				if (this.imageList && this.imageList.length > 0) {
 					return "IMAGE";
-				} else if (this.video.url > 0) {
+				} else if (this.videoUploadComplete) {
 					return "VIDEO";
 				} else {
 					return "TEXT";
@@ -165,7 +169,8 @@
 					header: {
 						"token": uni.getStorageSync("loginUser").token
 					},
-					success: async (uploadFileRes) => {
+					success: (uploadFileRes) => {
+						console.log('成功了')
 						let uploadData = JSON.parse(uploadFileRes.data);
 						this.video.url = uploadData.body;
 						console.log("上传完成：" + uploadFileRes.data);
@@ -173,6 +178,12 @@
 						// 	videoPath: uploadFileRes.data
 						// });
 						// this.videoCoverList = data.body;
+					},
+					fail: (res) => {
+						console.log(res)
+					},
+					complete: (res) => {
+						console.log('This is complete' + '调用完成')
 					}
 				});
 
@@ -187,6 +198,7 @@
 			if (this.publishType === 'REPOST') {
 				this.repostMomentId = options.repostMomentId;
 			}
+				
 
 		},
 		methods: {
@@ -212,7 +224,7 @@
 								src: tempFilePath
 							});
 							this.imageTempList.push({
-					
+
 								path: tempFilePath,
 								width: imageInfo.width,
 								height: imageInfo.height
@@ -303,7 +315,9 @@
 						param.video = this.video;
 					}
 
-					let [publishMomentData, publishMomentError] = await httpUtils.postJson("/moment/publishMoment", param);
+					console.log(param);
+					let [publishMomentData, publishMomentError] = await httpUtils.postJson("/moment/publishMoment",
+						param);
 					uni.hideLoading();
 
 					if (!publishMomentError) {
