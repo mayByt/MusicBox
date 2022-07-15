@@ -382,9 +382,12 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
 
                       path: tempFilePath,
                       width: imageInfo.width,
-                      height: imageInfo.height });_context.next = 4;break;case 16:case "end":return _context.stop();}}}, _callee);}));function success(_x) {return _success.apply(this, arguments);}return success;}() });
+                      height: imageInfo.height });_context.next = 4;break;case 16:
 
 
+
+                    _this2.warningIndex = -1;
+                    _this2.publishButton = false;case 18:case "end":return _context.stop();}}}, _callee);}));function success(_x) {return _success.apply(this, arguments);}return success;}() });
 
 
     },

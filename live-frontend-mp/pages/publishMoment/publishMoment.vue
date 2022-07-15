@@ -232,7 +232,7 @@
 							})
 							return;
 						}
-
+						
 						for (let i in res.tempFilePaths) {
 							let tempFilePath = res.tempFilePaths[i];
 
@@ -246,6 +246,9 @@
 								height: imageInfo.height
 							});
 						}
+						
+						this.warningIndex = -1;
+						this.publishButton = false;
 					}
 				});
 			},
