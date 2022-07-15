@@ -96,11 +96,18 @@
 				<view class="edit-info-publish-word-count">
 					{{textContent.length}}
 				</view>
-				<view class="edit-info-publish-button" @click="publish">
+				<button class="edit-info-publish-button" size="mini" :disabled="publishButton" @click="publish">发布</button>
+				<!-- <view class="edit-info-publish-button" @click="publish">
 					发布
-				</view>
+				</view> -->
 			</view>
 		</view>
+		<view :style="{'height':'63rpx',
+		'width': '126rpx',
+		'position': 'relative',
+		'left': '80%',
+		'bottom': '75rpx',
+		'z-index': warningIndex}" @click="warning"></view>
 
 	</view>
 </template>
@@ -139,7 +146,13 @@
 				textContent: "",
 
 				// 转发信息
-				repostMomentId: null
+				repostMomentId: null,
+				
+				// 发布按钮是否可用
+				publishButton: true,
+				
+				// 发布按钮不可用时触发警告弹窗
+				warningIndex: 10
 			}
 		},
 		computed: {
@@ -174,6 +187,9 @@
 						let uploadData = JSON.parse(uploadFileRes.data);
 						this.video.url = uploadData.body;
 						console.log("上传完成：" + uploadFileRes.data);
+						this.publishButton = false;
+						this.warningIndex = -1;
+						
 						// let [data] = await httpUtils.postJson("/video/queryVideoCover", {
 						// 	videoPath: uploadFileRes.data
 						// });
@@ -268,8 +284,8 @@
 			},
 
 			// 发动态，转发动态
-			async publish() {
-
+			async publish(){
+				
 				if (this.publishType === 'REPOST') {
 					// 转发
 					let param = {
@@ -327,7 +343,14 @@
 					}
 				}
 
+			},
+			warning() {
+				uni.showToast({
+					title: '服务器正在上传',
+					icon: 'error'
+				})
 			}
+			
 		}
 	}
 </script>
@@ -640,7 +663,7 @@
 	.edit-info-publish-wrapper {
 		display: flex;
 		flex-direction: row;
-		height: 56rpx;
+		/* height: 56rpx; */
 		font-size: 26rpx;
 		line-height: 56rpx;
 	}
@@ -661,5 +684,14 @@
 
 	.edit-info-publish-button:active {
 		background-color: #fa0021;
+	}
+	
+	.warningBox {
+		height: 63rpx;
+		width: 126rpx;
+		position: relative;
+		left: 80%;
+		bottom: 75rpx;
+		
 	}
 </style>

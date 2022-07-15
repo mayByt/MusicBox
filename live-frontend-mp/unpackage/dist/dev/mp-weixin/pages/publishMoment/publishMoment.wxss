@@ -333,6 +333,29 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 视频区域 */
 .video-area {
 	padding: 0 30rpx;
@@ -603,7 +626,7 @@
 .edit-info-publish-wrapper {
 	display: flex;
 	flex-direction: row;
-	height: 56rpx;
+	/* height: 56rpx; */
 	font-size: 26rpx;
 	line-height: 56rpx;
 }
@@ -621,5 +644,12 @@
 }
 .edit-info-publish-button:active {
 	background-color: #fa0021;
+}
+.warningBox {
+	height: 63rpx;
+	width: 126rpx;
+	position: relative;
+	left: 80%;
+	bottom: 75rpx;
 }
 
