@@ -59,6 +59,12 @@
       }
     ]
   },
+  "networkTimeout": {
+    "request": 10000000,
+    "connectSocket": 10000000,
+    "uploadFile": 10000000,
+    "downloadFile": 1000000
+  },
   "usingComponents": {},
   "sitemapLocation": "sitemap.json"
 }

@@ -220,7 +220,7 @@ __webpack_require__.r(__webpack_exports__);
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
 {
   globalData: {
-    domain: 'http://101.43.2.246:30000',
+    domain: 'http://101.43.2.246:30000/',
     randomKey: "OQlRb3WW89yfycQb97Rrt1Ef2OprRyKp",
     appName: "Live" },
 

@@ -187,7 +187,7 @@
 
 	.block-item {
 		width: 337rpx;
-		border-radius: 2rpx;
+		border-radius: 20rpx;
 		margin: 0 0 22rpx 0;
 	}
 

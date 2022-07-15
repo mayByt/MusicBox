@@ -144,11 +144,5 @@
 				"query": "" //启动参数，在页面的onLoad函数里面得到
 			}
 		]
-	},
-	"networkTimeout": {
-	    "request": 1000000,
-	    "connectSocket": 1000000,
-	    "uploadFile": 1000000,
-	    "downloadFile": 100000
 	}
 }

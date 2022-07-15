@@ -1,7 +1,7 @@
 <script>
 	export default {
 		globalData: {
-			domain: 'http://101.43.2.246:30000',
+			domain: 'http://101.43.2.246:30000/',
 			randomKey: "OQlRb3WW89yfycQb97Rrt1Ef2OprRyKp",
 			appName: "Live"
 		},
