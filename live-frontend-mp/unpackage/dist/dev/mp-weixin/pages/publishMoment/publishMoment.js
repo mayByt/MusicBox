@@ -351,6 +351,8 @@ var _httpUtils = _interopRequireDefault(__webpack_require__(/*! ../../common/uti
       });
     }
     if (this.publishType === 'REPOST') {
+      this.warningIndex = -1;
+      this.publishButton = false;
       this.repostMomentId = options.repostMomentId;
     }
 

@@ -212,6 +212,8 @@
 				});
 			}
 			if (this.publishType === 'REPOST') {
+				this.warningIndex = -1;
+				this.publishButton = false;
 				this.repostMomentId = options.repostMomentId;
 			}
 				
