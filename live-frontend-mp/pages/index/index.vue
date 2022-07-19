@@ -17,7 +17,7 @@
 		</view> -->
 
 		<!-- 轮播图 -->
-		<swiper :indicator-dots="true" indicator-color="rgba(255, 90, 95,0.3)" indicator-active-color="#ff5a5f" :autoplay="true" current="0" class="swiper" circular="true">
+		<swiper :indicator-dots="true" indicator-color="rgba(255, 90, 95,0.3)" indicator-active-color="#ff5a5f" :autoplay="true" class="swiper" circular="true">
 			<swiper-item v-for="swiper in swiperList">
 				<navigator open-type="navigate" :url="'../../pages/videoDetail/videoDetail?momentId=' + swiper.momentId">
 					<image :src="swiper.coverUrl" mode="aspectFill" class="swiper-image"></image>
@@ -159,12 +159,12 @@
 		border-radius: 6rpx;
 		margin-bottom: 32rpx;
 		overflow: hidden;
-		border-radius: 20rpx;
 	}
 
 	.swiper-image {
 		width: 690rpx;
 		height: 388rpx;
+		border-radius: 20rpx;
 	}
 
 	/* 板块 */
@@ -194,7 +194,7 @@
 	.block-item-image {
 		width: 337rpx;
 		height: 190rpx;
-		border-radius: 2rpx;
+		border-radius: 20rpx;
 	}
 
 	.block-item-title {

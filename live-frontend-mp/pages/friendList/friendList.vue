@@ -25,7 +25,8 @@
 						<!-- 用户名 -->
 						<view class="friend-user-user-name">
 							<text>{{user.name}}</text>
-							<image class="friend-user-gender" src="../../static/icon/gender-boy.png" mode="aspectFill"></image>
+								<image v-show="user.gender == 0" class="friend-user-gender" src="../../static/icon/gender-girl.png" mode="aspectFill"></image>
+								<image v-show="user.gender == 1" class="friend-user-gender" src="../../static/icon/gender-boy.png" mode="aspectFill"></image>
 						</view>
 						<!-- 个人简介 -->
 						<view class="friend-user-description">
@@ -46,7 +47,7 @@
 						<!-- 用户名 -->
 						<view class="friend-user-user-name">
 							<text>{{user.name}}</text>
-							<image class="friend-user-gender" src="../../static/icon/gender-boy.png" mode="aspectFill"></image>
+							<image class="friend-user-gender" :src="genderImg" mode="aspectFill"></image>
 						</view>
 						<!-- 个人简介 -->
 						<view class="friend-user-description">
@@ -89,7 +90,9 @@
 					userList: [],
 					pageNo: 1,
 					pageSize: 20
-				}
+				},
+				// 关注、粉丝性别图案
+				genderImg: '../../static/icon/gender-girl.png',
 			}
 		},
 

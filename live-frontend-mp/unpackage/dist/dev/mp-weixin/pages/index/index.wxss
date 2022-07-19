@@ -158,11 +158,11 @@
 		border-radius: 6rpx;
 		margin-bottom: 32rpx;
 		overflow: hidden;
-		border-radius: 20rpx;
 }
 .swiper-image {
 		width: 690rpx;
 		height: 388rpx;
+		border-radius: 20rpx;
 }
 /* 板块 */
 .block {
@@ -187,7 +187,7 @@
 .block-item-image {
 		width: 337rpx;
 		height: 190rpx;
-		border-radius: 2rpx;
+		border-radius: 20rpx;
 }
 .block-item-title {
 		font-size: 29rpx;
